@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.4",
+    "pinia": "^2.0.24",
     "prettier": "^2.6.2"
   }
 }
