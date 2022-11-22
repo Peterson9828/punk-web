@@ -1,22 +1,25 @@
 import { defineStore } from "pinia";
 import { DEFAULT_PAGE_SIZE, DEFAULT_PAGE } from "~/constants";
-import { filter } from "rxjs";
 
 export interface Beer {
   name: string;
   image_url: string;
 }
 
-const initFIltersState = {
+const initFiltersState = {
   page: DEFAULT_PAGE,
   per_page: DEFAULT_PAGE_SIZE,
-  beer_name: "punk",
+};
+
+const initFilterNameState = {
+  beer_name: null,
 };
 
 export const useBeerStore = defineStore("beerStore", {
   state: () => ({
     list: <any>[],
-    filters: initFIltersState,
+    filters: initFiltersState,
+    filtersName: initFilterNameState,
   }),
 
   getters: {
@@ -31,7 +34,9 @@ export const useBeerStore = defineStore("beerStore", {
       const { pending, data, error } = useLazyAsyncData("count", () =>
         $fetch("https://api.punkapi.com/v2/beers", {
           method: "GET",
-          params: this.filters,
+          params: this.filtersName.beer_name
+            ? { ...this.filters, ...this.filtersName }
+            : this.filters,
         })
       );
       console.log("pending", pending);

@@ -9,7 +9,7 @@ defineProps<{
   <div>
     <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-8">
       <div
-        class="rounded shadow-md p-2 px-4"
+        class="rounded-lg shadow-md p-2 px-4"
         v-for="beer of items"
         :key="beer.name"
       >

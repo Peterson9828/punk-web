@@ -1,3 +1,3 @@
 <template>
-  <NuxtPage class="p-5" />
+  <NuxtLayout> </NuxtLayout>
 </template>
