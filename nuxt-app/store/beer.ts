@@ -20,6 +20,7 @@ export const useBeerStore = defineStore("beerStore", {
     list: <any>[],
     filters: initFiltersState,
     filtersName: initFilterNameState,
+    loading: false,
   }),
 
   getters: {
@@ -31,7 +32,8 @@ export const useBeerStore = defineStore("beerStore", {
   },
   actions: {
     async fetchList() {
-      const { pending, data, error } = useLazyAsyncData("count", () =>
+      this.loading = true;
+      const { pending, data, error } = await useLazyAsyncData("count", () =>
         $fetch("https://api.punkapi.com/v2/beers", {
           method: "GET",
           params: this.filtersName.beer_name
@@ -39,14 +41,8 @@ export const useBeerStore = defineStore("beerStore", {
             : this.filters,
         })
       );
-      console.log("pending", pending);
       this.list = data;
-      console.log("error", error);
-
-      // this.list = await $fetch("https://api.punkapi.com/v2/beers", {
-      //   method: "GET",
-      //   params: this.filters,
-      // });
+      this.loading = false;
     },
   },
 });

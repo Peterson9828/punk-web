@@ -8,6 +8,7 @@ await beerStore.fetchList();
   <div>
     <Filter />
     <List :items="beerStore.list" />
+    <Pagination />
   </div>
 </template>
 

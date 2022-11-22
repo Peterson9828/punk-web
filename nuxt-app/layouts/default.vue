@@ -1,9 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="p-5">
+  <div class="px-8 py-5">
     <NuxtPage />
   </div>
 </template>
-
 <style></style>
