@@ -30,7 +30,8 @@ watch(
   <div class="grid grid-cols-3">
     <div class="flex items-center">
       <span class="text-gray-500 text-sm">
-        {{ beerStore.list ? beerStore.list.length : 0 }} elementos en total
+        {{ beerStore.list ? beerStore.list.length : 0 }}
+        {{ $t("components.Pagination.totalItems") }}
       </span>
     </div>
     <div class="text-center">
@@ -38,18 +39,20 @@ watch(
         class="px-3 shadow-lg rounded py-2 leading-tight text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700"
         @click="previousPagination"
       >
-        Previous
+        {{ $t("components.Pagination.previous") }}
       </button>
+
       <span
-        class="px-3 shadow-lg rounded py-2 leading-tight text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700"
+        class="px-3 mx-3 shadow-lg rounded py-2 leading-tight text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700"
       >
-        {{ beerStore.filters.page }}</span
-      >
+        {{ beerStore.filters.page }}
+      </span>
+
       <button
         class="px-3 shadow-lg rounded py-2 leading-tight text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700"
         @click="nextPagination"
       >
-        Previous
+        {{ $t("components.Pagination.next") }}
       </button>
     </div>
 

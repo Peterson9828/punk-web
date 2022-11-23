@@ -34,9 +34,9 @@ watch(
         </div>
         <input
           id="search"
-          class="block shadow-lg w-full p-4 pl-10 text-sm text-gray-900 rounded-lg"
+          class="block shadow-lg w-full p-4 pl-10 text-sm text-gray-900 rounded-lg font-mono"
           type="text"
-          placeholder="Buscar"
+          :placeholder="$t('components.Filter.search')"
           v-model="beerStore.filtersName.beer_name"
         />
       </div>

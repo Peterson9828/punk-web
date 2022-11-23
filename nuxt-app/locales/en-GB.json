@@ -1,0 +1,17 @@
+{
+  "made": "By Manuel Montalvo Tercero",
+  "welcome": "Welcome to Punk-Web ",
+  "components": {
+    "Filter": {
+      "search": "Search by beer name"
+    },
+    "Pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "totalItems": "total items"
+    },
+    "List": {
+      "empty": "No content"
+    }
+  }
+}

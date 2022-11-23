@@ -1,0 +1,17 @@
+{
+  "made": "Por Manuel Montalvo Tercero",
+  "welcome": "Bienvenido a Punk-Web ",
+  "components": {
+    "Filter": {
+      "search": "Buscar por nombre de cerveza"
+    },
+    "Pagination": {
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "totalItems": "elementos en total"
+    },
+    "List": {
+      "empty": "Sin contenido"
+    }
+  }
+}
